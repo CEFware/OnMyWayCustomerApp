@@ -1,0 +1,39 @@
+
+<template name="AccountPage">
+    {{#ionView}}
+        {{#ionContent class="bg-green1"}}
+            <div class="padding text-center">
+                <h3>OMN</h3>
+                <h5> Customer </h5>
+            </div>
+            <div class="padding text-center">
+                <img src="/images/logo.png" class="logo">
+            </div>
+        <div class="padding">
+            <h4 class="text-center">Login</h4>
+            <form id="loginForm">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Email:</span>
+                        <input type="text" id="login_email">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Password:</span>
+                        <input type="password" id="login_password">
+                    </label>
+                </div>
+                <button class="button button-block button-positive" type="submit">Sign In</button>
+            </form>
+
+
+
+            <p class="text-center">Still Not Registered?</p>
+            <button class="button button-full button-energized"  data-ion-modal="register" >
+                Register
+            </button>
+        </div>
+        {{/ionContent}}
+    {{/ionView}}
+    this is main page
+
+</template>

@@ -1,0 +1,41 @@
+<template name="register">
+    {{#ionModal title="Register"}}
+        {{#ionContent class=""}}
+            <div class="padding">
+                <form id="registerForm">
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">First Name</span>
+                            <input type="text" id="fname" placeholder="Enrique">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Last Name</span>
+                            <input type="text" id="lname" placeholder="Surname">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Email</span>
+                            <input type="email" id="email" placeholder="john@suhr.com">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Password</span>
+                            <input type="password" id="password" placeholder="Type Somethng unique">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Phone</span>
+                            <input type="text" id="phoneNo" placeholder="97887875876">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">City</span>
+                            <input type="text" id="city"  placeholder="New York">
+                        </label>
+                    </div>
+                    <button type="submit" class="button button-block button-positive">Create Account</button>
+                </form>
+
+
+            </div>
+        {{/ionContent}}
+
+    {{/ionModal}}
+
+</template>

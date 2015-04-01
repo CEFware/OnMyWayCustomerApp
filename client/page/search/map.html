@@ -1,0 +1,15 @@
+<template name="searchMap">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton text="Main Screen" href="/"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Search in MAp</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{> map}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>

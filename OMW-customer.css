@@ -1,0 +1,43 @@
+/* CSS declarations go here */
+/* CSS declarations go here */
+.bg-yellow{
+    background: rgb(254,191,4);
+}
+.bg-green1{
+    background: #39C48A;
+}
+.text-green{
+    color: #39C48A;
+}
+.bg-blue{
+    background: #4357E8;
+}
+.text-blue{
+    color: #4357E8;
+}
+.text-yellow{
+    color:rgb(254,191,4);
+}
+.text-white{
+    color: #fff;
+}
+.text-center{
+    text-align: center;
+}
+.top-5{
+    margin-top: 5%;
+}
+.logo{
+    height: 100px;
+}
+#footer-btns {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#map-container{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+}

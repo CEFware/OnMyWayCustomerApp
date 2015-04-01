@@ -1,0 +1,32 @@
+<template name="home">
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+            {{#if isAndroid}}
+                {{> ionIcon icon='android-more-vertical'}}
+            {{else}}
+                {{> ionIcon icon='navicon'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Welcome</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{> normalHome}}
+            {{/ionContent}}
+    {{/ionView}}
+</template>
+<template name="normalHome">
+    <div class="padding">
+        Welcome
+    </div>
+</template>
+<template name="map">
+    <div id="map-container">
+                {{> googleMap name="OMWMAP" options=exampleMapOptions}}
+
+    </div>
+</template>

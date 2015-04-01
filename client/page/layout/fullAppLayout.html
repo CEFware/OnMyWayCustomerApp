@@ -1,0 +1,16 @@
+<template name="fullAppLayout">
+    {{#ionBody class="bg-green1"}}
+        {{#ionNavView}}
+            {{> yield}}
+        {{/ionNavView}}
+    {{/ionBody}}
+
+</template>
+<template name="OnlyPageLayout">
+    {{#ionBody}}
+        {{> ionNavBar class="bar-balanced"}}
+        {{#ionNavView}}
+            {{> yield}}
+        {{/ionNavView}}
+    {{/ionBody}}
+</template>

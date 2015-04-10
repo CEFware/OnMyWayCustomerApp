@@ -1,0 +1,31 @@
+<template name="driveList">
+    {{#contentFor "headerButtonLeft"}}
+        <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+            {{#if isAndroid}}
+                {{> ionIcon icon='android-more-vertical'}}
+            {{else}}
+                {{> ionIcon icon='navicon'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">{{status}}</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <ul class="list">
+                {{#each drives}}
+                    <li class="item">
+                        {{status}} : <span class="{{getClassByStatus}}"> {{customerInfo.basicInfo.Name.fname}} {{customerInfo.basicInfo.Name.lname}}</span>
+                    </li>
+                   {{else}}
+                     <li class="item">
+                       <span class="text-center text-red">you have no {{status}} drives</span>
+                     </li>
+                {{/each}}
+            </ul>
+        {{/ionContent}}
+    {{/ionView}}
+</template>

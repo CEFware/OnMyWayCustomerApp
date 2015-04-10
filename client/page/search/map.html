@@ -9,7 +9,11 @@
 
     {{#ionView}}
         {{#ionContent}}
-            {{> map}}
+            {{#if locationObtained}}
+                {{> map}}
+            {{else}}
+                <h3 class="text-center">Geting Your Location</h3>
+            {{/if}}
         {{/ionContent}}
     {{/ionView}}
 </template>

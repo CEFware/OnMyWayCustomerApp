@@ -14,9 +14,24 @@
                             <div class="item item-icon-right" data-ion-menu-close>
                                 Close Me {{> ionIcon icon="ios-arrow-right"}}
                             </div>
-                            <div class="item item-icon-right" id="map-btn" >
-                               Search In Map {{> ionIcon icon="ios-arrow-right"}}
+                            <div class="item item-icon-right btn-home" data-ion-menu-close>
+                                Home <span
+                                    class="badge text-yellow">{{getpendingCount}}</span>  {{> ionIcon icon="ios-arrow-right"}}
                             </div>
+                            <div class="item item-icon-right nav-driveStatus" data-status="accepted"
+                                 data-ion-menu-close>
+                                Accepted drive <span
+                                    class=" badge text-green">{{getDriveCount 'accepted'}}</span>  {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+                            <div class="item item-icon-right nav-driveStatus" data-status="rejected"
+                                 data-ion-menu-close>
+                                Accepted drive <span
+                                    class="badge text-red">{{getDriveCount 'rejected'}}</span>  {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+                            <div class="item item-icon-right" id="map-btn">
+                                Search In Map  {{> ionIcon icon="ios-arrow-right"}}
+                            </div>
+
                         </div>
                     </div>
                 {{/ionSideMenu}}

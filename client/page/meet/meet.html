@@ -1,0 +1,34 @@
+<template name="meet">
+        {{#contentFor "headerButtonLeft"}}
+            {{>ionNavBackButton text="Main Screen" href="/"}}
+        {{/contentFor}}
+
+        {{#contentFor "headerTitle"}}
+            <h1 class="title">Lets meet</h1>
+        {{/contentFor}}
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear pull-left" data-ion-menu-toggle="right">
+            {{#if isAndroid}}
+                {{> ionIcon icon='chatbox'}}
+            {{else}}
+                {{> ionIcon icon='chatbubble'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+
+        {{#ionView}}
+            {{#ionContent}}
+                {{#if locationObtained}}
+                    {{> meetMap}}
+                {{else}}
+                    <h3 class="text-center">Geting Your Location</h3>
+                {{/if}}
+            {{/ionContent}}
+        {{/ionView}}
+</template>
+<template name="meetMap">
+    <div id="map-container">
+        {{> googleMap name="meetMap" options=exampleMapOptions}}
+
+    </div>
+</template>

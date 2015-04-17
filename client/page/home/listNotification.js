@@ -27,8 +27,15 @@ Template.normalHome.helpers({
 Template.normalHome.events({
     'click .btn-status':function(e,t){
         e.preventDefault();
+        var id=this._id;
        omwMerchant.call('seenByCustomer',this._id,function(err,res){
-
+            if(!err){
+                Router.go('/meet/'+id);
+            }
        })
+    },
+    'click .btn-search':function(e,t){
+        e.preventDefault();
+        Router.go('/search');
     }
 });

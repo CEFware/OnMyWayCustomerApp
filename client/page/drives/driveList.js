@@ -11,5 +11,16 @@ Template.driveList.helpers({
     getClassByStatus:function(){
         var color={'accepted':'text-green','rejected':'text-red'}
         return color[Router.current().params.status];
+    },
+    merchantInfo:function(){
+        var subs=omwMerchant.subscribe('userInfo',this.merchantId);
+        if(subs.ready()){
+            var userInfo= user.findOne({_id:this.merchantId},{fields:{'profile.basicInfo':1}});
+            if(userInfo && userInfo.profile){
+                console.log(userInfo.profile.basicInfo);
+                return userInfo.profile.basicInfo;
+            }
+
+        }
     }
 });

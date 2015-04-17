@@ -22,6 +22,8 @@ Template.register.events({
        Accounts.createUser(user,function(err,res){
           if(err){
               alert(err.reason);
+          }else{
+              $('body').removeClass('modal-open');
           }
        });
    }

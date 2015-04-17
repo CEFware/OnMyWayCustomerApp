@@ -18,7 +18,14 @@
             <ul class="list">
                 {{#each drives}}
                     <li class="item">
-                        {{status}} : <span class="{{getClassByStatus}}"> {{customerInfo.basicInfo.Name.fname}} {{customerInfo.basicInfo.Name.lname}}</span>
+                        {{#with merchantInfo}}
+                            <div class="row">
+
+                                <div class="col-100">
+                                    You requested drive to <span class="{{getClassByStatus}}">{{Name.fname}} {{Name.lname}} </span>
+                                </div>
+                            </div>
+                        {{/with}}
                     </li>
                    {{else}}
                      <li class="item">

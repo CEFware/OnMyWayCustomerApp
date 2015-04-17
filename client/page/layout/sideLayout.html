@@ -3,14 +3,24 @@
 
         {{#ionSideMenuContainer}}
                 {{#ionSideMenu side="right"}}
-                    <div class="bar bar-header bar-dark">
-                        <h1 class="title">Messeges</h1>
+                    <div class="bar bar-header">
+                        <h1 class="title">Header</h1>
                     </div>
-                    <div class="content has-header">
-                        <div class="list">
-                            <div class="item item-icon-left" data-ion-menu-close>
-                                {{> ionIcon icon="ios-arrow-left"}} Close Me
-                            </div>
+                    {{#ionView}}
+                        {{#ionContent}}
+                            {{> messeges}}
+                        {{/ionContent}}
+                    {{/ionView}}
+                    <div class="bar bar-footer top-blue" style="height: 70px">
+                        <div class="" style="width: 100%">
+                            <form id="messegeForm">
+                                <label class="item item-input">
+                                    <i class="icon ion-paper-airplane placeholder-icon"></i>
+                                    <input type="text" placeholder="Messege" id="messege">
+
+                                </label>
+                            </form>
+
                         </div>
                     </div>
                 {{/ionSideMenu}}
@@ -27,4 +37,53 @@
         {{/ionSideMenuContainer}}
 
     {{/ionBody}}
+</template>
+<template name="messeges">
+    {{#if isMessegeReady}}
+        {{#each messeges}}
+        <div class="conversation">
+            <div class="massages">
+                {{> messegeData}}
+
+            </div>
+
+        </div>
+            {{else}}
+                <h4 class="text-center"> You Haven't started conversion</h4>
+                <div class="text-center">
+                    <button class="button  button-primary"> Start Conversation</button>
+                </div>
+           {{/each}}
+        {{else}}
+            <div class="text-center">
+                loading ...
+            </div>
+
+    {{/if}}
+
+</template>
+<template name="messegeData">
+    {{#if myMessege}}
+
+        <div class="massage massage-left">
+            <div class="massage-author">
+                <img src="http://lorempixel.com/40/40/"/>
+            </div>
+            <div class="massage-text">
+                <p>{{text}}</p>
+            </div>
+        </div>
+    {{else}}
+
+        <div class="massage massage-right">
+            <div class="massage-author">
+                <img src="http://lorempixel.com/40/40/"/>
+            </div>
+            <div class="massage-text">
+                <!--multimple massages-->
+                <p>{{text}}</p>
+                {{makeSeen}}
+            </div>
+        </div>
+    {{/if}}
 </template>

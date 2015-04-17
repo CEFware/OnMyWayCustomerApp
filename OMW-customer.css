@@ -44,3 +44,111 @@
 .text-red{
     color: red;
 }
+.top-blue{
+    border-top: 2px solid #4357E8;
+}
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:70px;
+    width:100%;
+    background:#999;
+}
+.conversation {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+}
+.conversation .massages {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+.conversation .massages .massage {
+    margin-bottom: 10px;
+    position: relative;
+}
+.conversation .massages .massage .massage-text {
+    padding: 10px;
+    position: relative;
+}
+.conversation .massages .massage .massage-text p {
+    margin: 0;
+    font-size: 16px;
+    color: #111111;
+    font-weight: 300;
+}
+.conversation .massages .massage .massage-text:after {
+    top: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 5px;
+    margin-top: -5px;
+}
+.conversation .massages .massage.massage-left .massage-author {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.conversation .massages .massage.massage-left .massage-text {
+    margin-left: 50px;
+    background-color: #c7edfc;
+}
+.conversation .massages .massage.massage-left .massage-text:after {
+    right: 100%;
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #c7edfc;
+}
+.conversation .massages .massage.massage-right .massage-author {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.conversation .massages .massage.massage-right .massage-text {
+    background-color: #e5f7fd;
+    margin-right: 50px;
+}
+.conversation .massages .massage.massage-right .massage-text:after {
+    left: 100%;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #e5f7fd;
+}
+.conversation .massage-date-divider {
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.conversation .massage-date-divider:after {
+    height: 1px;
+    width: 100%;
+    content: "";
+    background-color: #e4ecef;
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+}
+.conversation .massage-date-divider .date {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 0 10px;
+    color: #a2c5d3;
+    font-weight: 300;
+    font-size: 14px;
+}
+.conversation .massage-post {
+    margin-top: 20px;
+}
+.conversation .massage-post textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}

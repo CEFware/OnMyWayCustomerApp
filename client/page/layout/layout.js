@@ -26,3 +26,29 @@ Template.layout.helpers({
         return drivesInfo.find({customerId:Meteor.userId(),customerSeen:false}).count();
     }
 });
+
+Template.sideLayout.events({
+   'submit form':function(e,t){
+       e.preventDefault();
+       var messege= {
+           driveId: Router.current().params._id,
+           text: t.find('#messege').value,
+           by: Meteor.userId()
+       };
+       omwMerchant.call('insertMessege',messege,function(err){
+        if(!err){
+            $('#messegeForm')[0 ].reset();
+        }
+       });
+   }
+});
+Template.messegeData.helpers({
+    myMessege:function(){
+        return this.by==Meteor.userId();
+    },
+    makeSeen:function(){
+        omwMerchant.call('messegeSeen',this._id,function(err,res){
+
+        });
+    }
+});

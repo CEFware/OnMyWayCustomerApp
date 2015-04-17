@@ -8,6 +8,8 @@ Template.meet.onCreated(function(){
 });
 Template.meetMap.rendered=function(){
     IonSideMenu.snapper.disable();
+
+
 };
 Template.meetMap.destroyed=function(){
     IonSideMenu.snapper.enable();
@@ -66,4 +68,19 @@ Template.meetMap.onCreated(function(){
             }
         });
     });
+});
+Template.messeges.onCreated(function(){
+
+});
+Template.messeges.helpers({
+   isMessegeReady:function(){
+       var subs=omwMerchant.subscribe('messeges',Router.current().params._id);
+       if(subs.ready())
+        return true;
+       else
+        return false;
+   },
+    messeges:function(){
+        return messeges.find({driveId:Router.current().params._id});
+    }
 });

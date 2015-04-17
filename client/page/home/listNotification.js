@@ -32,7 +32,7 @@ Template.normalHome.events({
             if(!err){
                 Router.go('/meet/'+id);
             }
-       })
+       });
     },
     'click .btn-search':function(e,t){
         e.preventDefault();

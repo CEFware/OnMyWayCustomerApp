@@ -1,66 +1,71 @@
 <template name="normalHome">
     <div class="padding">
-        {{#if driveRequest}}
-            {{#each driveRequest}}
-                <div class="card">
-                    <div class="item item-divider">
-                        {{#with merchantInfo}}
-                            <div class="row">
+        <div class="row">
+            <div class="col-80">
+                {{#if driveRequest}}
+                    {{#each driveRequest}}
+                        <div class="card">
+                            <div class="item item-divider">
+                                {{#with merchantInfo}}
+                                    <div class="row">
 
-                                <div class="col-100">
-                                    You requested drive to <span class="text-blue">{{Name.fname}} {{Name.lname}} </span>
-                                </div>
+                                        <div class="col-100">
+                                            You requested drive to <span class="text-blue">{{Name.fname}} {{Name.lname}} </span>
+                                        </div>
+                                    </div>
+                                {{/with}}
                             </div>
-                        {{/with}}
-                    </div>
-                    <div class="item item-text-wrap">
+                            <div class="item item-text-wrap">
 
-                            {{#if merchantSeen}}
-                        <div class="row">
-                            <div class="col-100">
+                                {{#if merchantSeen}}
+                                    <div class="row">
+                                        <div class="col-100">
 
-                                {{#if accepted}}
-                                    <span class="text-blue">Congratulation <span class="text-green">{{merchantInfo.Name.fname}} </span> accepted for ride Have a safe ride</span>
-                                    {{else}}
-                                    <span class="text-red">Sorry Merchant rejected  Your Drive. Try another merchant</span>
+                                            {{#if accepted}}
+                                                <span class="text-blue">Congratulation <span class="text-green">{{merchantInfo.Name.fname}} </span> accepted for ride Have a safe ride</span>
+                                            {{else}}
+                                                <span class="text-red">Sorry Merchant rejected  Your Drive. Try another merchant</span>
+
+                                            {{/if}}
+
+                                        </div>
+                                    </div>
+                                {{else}}
+                                    Waiting for merchant response
+                                {{/if}}
+
+
+                            </div>
+                            <div class="item item-divider">
+                                {{#if merchantSeen}}
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <span class="button icon-right ion-checkmark-round button-positive btn-status">Ok</span>
+                                        </div>
+                                    </div>
+                                {{else}}
 
                                 {{/if}}
 
                             </div>
                         </div>
-                                {{else}}
-                                Waiting for merchant response
-                            {{/if}}
+                    {{else}}
+                        <h2 class="text-center"> You have no active drive</h2>
+                        <div class="text-center">
+                            <span class="button icon-left ion-search button-positive btn-search">Starting Searching Driver</span>
 
-
-                    </div>
-                    <div class="item item-divider">
-                        {{#if merchantSeen}}
-                            <div class="row">
-                                <div class="col-50">
-                                    <span class="button icon-right ion-checkmark-round button-positive btn-status">Ok</span>
-                                </div>
-                            </div>
-                            {{else}}
-
-                        {{/if}}
-
-                    </div>
-                </div>
+                        </div>
+                    {{/each}}
                 {{else}}
-                    <h2 class="text-center"> You have no active drive</h2>
-                    <div class="text-center">
-                        <span class="button icon-left ion-search button-positive btn-search">Starting Searching Driver</span>
-
+                    <div class="padding">
+                        <h4 class="text-center">
+                            loading request ....
+                        </h4>
                     </div>
-            {{/each}}
-        {{else}}
-            <div class="padding">
-                <h4 class="text-center">
-                    loading request ....
-                </h4>
+                {{/if}}
             </div>
-        {{/if}}
+        </div>
+
 
     </div>
 </template>

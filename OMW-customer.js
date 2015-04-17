@@ -11,6 +11,7 @@ Meteor.startup(function(){
     drivesInfo=new Mongo.Collection('driveInfo',omwMerchant);
      subsUser=omwMerchant.subscribe('onlineUser');
      driveSubs=omwMerchant.subscribe('driveInfo',false,Meteor.userId());
+    messeges=new Mongo.Collection('messeges',omwMerchant);
 });
 
 

@@ -47,8 +47,22 @@ Template.messegeData.helpers({
         return this.by==Meteor.userId();
     },
     makeSeen:function(){
-        omwMerchant.call('messegeSeen',this._id,function(err,res){
+        if(IonSideMenu.snapper.state().state =="closed" || this.seen == true)
+            return;
 
-        });
+        else {
+            Meteor.call('messegeSeen', this._id, function (err, res) {
+
+            });
+        }
+
     }
 });
+Template.sideLayout.rendered=function(){
+    $('.content').addClass('has-footer');
+};
+Template.messegeData.rendered=function(){
+    $(".content").animate({
+        scrollTop:  10000
+    });
+};

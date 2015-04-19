@@ -1,6 +1,14 @@
 /**
  * Created by piyushthapa on 4/1/15.
  */
+var initSlideEvent=function(){
+    $('.badge2').click(function(){
+        var state=IonSideMenu.snapper.state().state;
+        if(state=='closed'){
+            omwMerchant.call('allMessegeSeen',Router.current().params._id,Meteor.userId());
+        }
+    });
+};
 Template.layout.events({
    'click #map-btn':function(e,t){
        e.preventDefault();
@@ -62,6 +70,9 @@ Template.sideLayout.rendered=function(){
     $('.content').addClass('has-footer');
 };
 Template.messegeData.rendered=function(){
+    if(this.data.by!=Meteor.userId() && this.data.seen==false){
+        initSlideEvent();
+    }
     $(".content").animate({
         scrollTop:  10000
     });

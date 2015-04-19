@@ -5,16 +5,30 @@
 
         {{#contentFor "headerTitle"}}
             <h1 class="title">Lets meet</h1>
+            {{#contentFor "headerTitle"}}
+                <h1 class="title">Lets meet</h1>
+                {{#if dataCount}}
+                    <button class="button button-clear pull-left badge2" data-badge="{{dataCount}}" data-ion-menu-toggle="right">
+                        {{#if isAndroid}}
+                            {{> ionIcon icon='chatbox-working' }}
+                        {{else}}
+                            {{> ionIcon icon='chatbubble-working'}}
+                        {{/if}}
+
+                    </button>
+                {{else}}
+                    <button class="button button-clear pull-left badge2" data-ion-menu-toggle="right">
+                        {{#if isAndroid}}
+                            {{> ionIcon icon='chatbox' }}
+                        {{else}}
+                            {{> ionIcon icon='chatbubble'}}
+                        {{/if}}
+
+                    </button>
+
+                {{/if}}
+            {{/contentFor}}
         {{/contentFor}}
-    {{#contentFor "headerButtonRight"}}
-        <button class="button button-clear pull-left badge1" data-badge="5" data-ion-menu-toggle="right">
-            {{#if isAndroid}}
-                {{> ionIcon icon='chatbox' }}
-            {{else}}
-                {{> ionIcon icon='chatbubble'}}
-            {{/if}}
-        </button>
-    {{/contentFor}}
 
         {{#ionView}}
             {{#ionContent}}

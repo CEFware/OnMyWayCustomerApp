@@ -17,6 +17,15 @@ Template.meetMap.destroyed=function(){
 Template.meet.helpers({
     locationObtained:function(){
         return Session.get('Location');
+    },
+    dataCount:function(){
+        var count=messeges.find({by:{$ne:Meteor.userId()},seen:false,driveId:Router.current().params._id}).count();
+        console.log(count);
+        if(count >0){
+            return count;
+        }
+
+
     }
 });
 Template.meet.events({

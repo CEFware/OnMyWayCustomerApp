@@ -1,6 +1,7 @@
 /**
  * Created by piyushthapa on 4/8/15.
  */
+var mapInitialized=false;
 Template.searchMap.onCreated(function(){
    this.autorun(function(){
        Session.set('Location',Geolocation.latLng());
@@ -13,7 +14,7 @@ Template.searchMap.helpers({
     }
 });
 Template.map.onCreated(function(){
-
+     mapInitialized=false;
     GoogleMaps.ready('OMWMAP', function(mapObj) {
 
         var MARKERS=[];
@@ -70,14 +71,18 @@ Template.map.onCreated(function(){
 });
 Template.map.helpers({
     exampleMapOptions: function() {
-        // Make sure the maps API has loaded
-        if (GoogleMaps.loaded()) {
-            // Map initialization options
-            return {
-                center: new google.maps.LatLng(Session.get('Location').lat, Session.get('Location').lng),
-                zoom: 15
-            };
+        if(!mapInitialized){
+            // Make sure the maps API has loaded
+            if (GoogleMaps.loaded()) {
+                mapInitialized=true;
+                // Map initialization options
+                return {
+                    center: new google.maps.LatLng(Session.get('Location').lat, Session.get('Location').lng),
+                    zoom: 15
+                };
+            }
         }
+
     }
 
 });

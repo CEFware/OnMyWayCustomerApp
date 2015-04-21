@@ -48,18 +48,23 @@ Template.sideLayout.events({
             $('#messegeForm')[0 ].reset();
         }
        });
-   }
+   },
+    'click .buttonStart':function(){
+        $('#messege').focus();
+    }
 });
 Template.messegeData.helpers({
     myMessege:function(){
-        return this.by==Meteor.userId();
+        var isMe= this.by==Meteor.userId();
+
+        return isMe;
     },
     makeSeen:function(){
         if(IonSideMenu.snapper.state().state =="closed" || this.seen == true)
             return;
 
         else {
-            Meteor.call('messegeSeen', this._id, function (err, res) {
+            omwMerchant.call('messegeSeen', this._id, function (err, res) {
 
             });
         }
